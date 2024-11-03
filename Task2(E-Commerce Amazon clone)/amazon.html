@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Clone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        .aitem{
+            display:flex;
+            justify-content: space-evenly;
+            background-color:rgb(14, 11, 25);
+            align-items: center;
+            margin:0px;
+            flex-wrap:wrap;
+        }
+        .aitem1 img{
+            width:120px;
+            height:50px;
+            border-radius:5px;
+        }
+        .aitem2{
+            font-size:20px;
+            color:white;
+        }
+        .aitem3{
+            margin-top:25px;
+            position:relative;
+            right:10px;
+            color:white;
+        }
+        .aitem3 h1{
+            font-size:12px;
+            margin-bottom:0px;
+            margin-top:0px;
+            margin-top:0px;
+        }
+        .aitem3 h2{
+            font-size:17px;
+            margin-top:0px;
+            position:relative;
+            bottom:20px;
+        }
+        .aitem4{
+            display:flex;
+        }
+        .aitem4 select{
+            width:50px;
+            height:40px;
+            background-color:rgb(160, 154, 154);
+            color:rgb(8, 1, 1);
+            border-top-left-radius:5px;
+            border-bottom-left-radius:5px;
+        }
+        .aitem4 input{
+            padding:11px;
+            padding-right:340px;
+        }
+        .aitem5{
+            width:40px;
+            height:41px;
+            display:flex;
+            font-size:30px;
+            justify-content: center;
+            align-items: center;
+            background-color:rgb(234, 188, 51);
+            border-bottom-right-radius:5px;
+            border-top-right-radius:5px;
+            position:relative;
+            right:20px;
+        }
+        .aitem6{
+            display:flex;
+            position: relative;
+            right:10px;
+            margin-top:15px;
+        }
+        .aitem6 select{
+            height:20px;
+        }
+        .aitem7 p{
+            margin-bottom:0px;
+            margin-top:0px;
+            font-size:8;
+            color: white;
+        }
+        .aitem7 select{
+            color:white;
+            font-size:15px;
+            background-color:rgb(14, 11, 25) ;
+            border-color: rgb(14, 11, 25);
+        }
+        .aitem8 h6{
+            margin:0px;
+            font-size:15px;
+            color:white;
+        }
+        .aitem8 h4{
+            color:white;
+            margin:0px;
+            font-size:20px;
+        }
+        .aitem9{
+            height:45px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:35px;
+            color:white
+        }
+        .bitem{
+            display:flex;
+            justify-content: space-evenly;
+            height:45px;
+            align-items: center;
+            background-color:rgb(21, 42, 66);
+            flex-wrap:wrap;
+        }
+        .bitem a{
+            text-decoration: none;
+            font-size:17px;
+            color:white;
+            padding:5px;
+        }
+        .bitem i{
+            color:white;
+            font-size: 13px;
+            padding:5px;
+        }
+        .bitem select{
+            background-color:rgb(21, 42, 66);
+            border-color:rgb(21, 42, 66);
+            color:white;
+            font-size: 15px;
+        }
+        .bitem a:hover,.bitem select:hover,.bitem i:hover{
+            border:2px solid white;
+        }
+        .citem,.ditem{
+            display: flex;
+            justify-content: space-evenly;
+            position: relative;
+            bottom:300px;
+            align-items:center;
+            /* flex-wrap: wrap; */
+        }
+        .overlapimg img{
+            width:100%;
+            height:550px;
+        }
+        .citem1,.citem2,.citem3,.citem4,.ditem1,.ditem2,.ditem3,.ditem4,.hitem1,.hitem2,.hitem3,.hitem4{
+            height:450px;
+            width:350px;
+            background-color: rgb(204, 204, 204);
+            margin:10px;
+        }
+        .citem1 h3,.citem2 h3,.citem3 h3,.citem4 h3,.ditem1 h3,.ditem2 h3,.ditem3 h3,.ditem4 h3,.hitem1 h3,.hitem2 h3,.hitem3 h3,.hitem4 h3{
+            margin-left:12px;
+            font-size:20px;
+            margin-bottom:10px;
+        }
+        .citem1 p,.citem2 p,.citem3 p,.citem4 p,.ditem1 p,.ditem2 p,.ditem3 p,.ditem4 p,.hitem3 p,.hitem4 p,.hitem2 p,.hitem1 p{
+            margin-left:12px;
+            padding-bottom:0px;
+        }
+        .citem1a img,.citem1c img,.citem2a img,.citem2c img,.citem3a img,.citem3c img,.citem4a img,.citem4c img,.ditem1a img,.ditem1c img,.ditem2a img,.ditem2c img,.ditem3a img,.ditem3c img,.ditem4a img,.ditem4c img,.hitem2a img,.hitem2c img{
+            height:110px;
+            width:130px;
+        }
+        .citem1a,.citem1b,.citem1c,.citem1d,.citem2a,.citem2b,.citem2c,.citem2d,.citem3a,.citem3b,.citem3c,.citem3d,.citem4a,.citem4b,.citem4c,.citem4d,.ditem1a,.ditem1b,.ditem1c,.ditem1d,.ditem2a,.ditem2b,.ditem2c,.ditem2d,.ditem3a,.ditem3b,.ditem3c,.ditem3d,.ditem4a,.ditem4b,.ditem4c,.ditem4d,.hitem1a,.hitem1b,.hitem2a,.hitem2b,.hitem2c,.hitem2d,.hitem4a,.hitem4b{
+            display:flex;
+        }
+        .citem1a img,.citem1c img,.citem2a img,.citem2c img,.citem3a img,.citem3c img,.citem4a img,.citem4c img,.ditem1a img,.ditem1c img,.ditem2a img,.ditem2c img,.ditem3a img,.ditem3c img,.ditem4a img,.ditem4c img,.hitem1a img,.hitem1b img,.hitem2a img,.hitem2c img,.hitem3a img,.hitem4a img,.hitem4b img{
+            margin-left:10px;
+        }
+        .citem1b p,.citem1d p,.citem2b p,.citem2d p,.citem3b p,.citem3d p,.citem4b p,.citem4d p,.ditem1b p,.ditem1d p,.ditem2b p,.ditem2d p,.ditem3b p,.ditem3d p,.ditem4b p,.ditem4d p,.hitem2b p,.hitem2d p{
+            margin-left: 10px;
+            margin-top:0px;
+            font-size:13px;
+        }
+        .eitem{
+            width:100%;
+            height:330px;
+            background-color: rgb(204, 204, 204);
+            position: relative;
+            bottom:280px;
+            /* flex-wrap: wrap; */
+        }
+        .fitem{
+            width:100%;
+            height:330px;
+            background-color: rgb(204, 204, 204);
+            position:relative;
+            bottom:250px;
+            /* flex-wrap: wrap; */
+        }
+        .gitem{
+            width:100%;
+            height:330px;
+            background-color: rgb(204, 204, 204);
+            position: relative;
+            bottom:220px;
+            /* flex-wrap: wrap; */
+        }
+        .eitem1,.fitem1,.gitem1{
+            display:flex;
+        }
+        .eitem1 h3,.fitem1 h3,.gitem1 h3{
+            margin-left:20px;
+            font-size: 25px;
+        }
+        .eitem1 a,.fitem1 a,.gitem1 a{
+            text-decoration:none;
+            margin-top:25px;
+            margin-left:20px;
+        }
+        .eitem2,.fitem2,.gitem2{
+            display:flex;
+            justify-content: space-evenly;
+        }
+        .eitem2 img{
+            width:250px;
+            height:200px;
+        }
+        .fitem2 img,.gitem2 img{
+            width:220px;
+            height:200px;
+        }
+        .hitem{
+            display:flex;
+            justify-content: space-evenly;
+            align-items: center;
+            position: relative;
+            bottom:200px;
+            /* flex-wrap: wrap; */
+        }
+        .hitem1a img,.hitem1b img,.hitem4a img,.hitem4b img{
+            width:140px;
+            height:150px;
+        }
+        .hitem3a img{
+            width:300px;
+            height:300px;
+        }
+        .iitem{
+            display:flex;
+            flex-direction:column;
+            background-color:rgb(204, 204, 204);
+            padding:10px;
+            position:relative;
+            bottom:200px;
+        }
+        .iitem p{
+            align-self:center;
+            margin:2px;
+        }
+        .iitem button{
+            height:30px;
+            width:120px;
+            align-self: center;
+            background-color:rgb(226, 149, 7);
+            border-radius:5px;
+        }
+        .iitem a{
+            text-decoration: none;
+        }
+        .jitem{
+            display:flex;
+            flex-direction: column;
+            background-color:rgb(6, 27, 56);
+            height:50px;
+            width:100%;
+            position: relative;
+            bottom:180px;
+        }
+        .jitem a{
+            color:white;
+            font-size:20px ;
+            padding-top: 15px;
+            text-decoration: none;
+            align-self: center;
+        }
+        .jitem:hover{
+            background-color: rgb(17, 20, 53);
+        }
+        .kitem{
+            background-color:rgb(6, 20, 41); 
+            display:flex;
+            justify-content: space-evenly;
+            height:300px;
+            width:100%;
+            padding-top:100px;
+            position: relative;
+            bottom:180px;
+        }
+        .kitem1,.kitem2,.kitem3,.kitem4{
+            display:flex;
+            flex-direction:column;
+        }
+        .kitem1 a,.kitem2 a,.kitem3 a,.kitem4 a{
+            text-decoration:none;
+            color:white;
+            font-size:15px;
+            margin-top:5px;
+        }
+        .kitem1 a:hover,.kitem2 a:hover,.kitem3 a:hover,.kitem4 a:hover{
+            text-decoration: underline;
+        }
+        .litem{
+            display:flex;
+            height:150px;
+            width:100%;
+            align-items: center;
+            justify-content: center;
+            background-color:rgb(6, 20, 41); 
+            position: relative;
+            bottom:200px;
+        }
+        .litem1,.litem2,.litem3,.litem4{
+            display:flex;
+            margin-left:20px;
+        }
+        .litem2 select{
+            height:30px;
+            width:90px;
+            background-color:rgb(6, 20, 41); 
+            color:white;
+            border-radius:5px;
+        }
+        .litem2 i{
+            font-size:30px;
+            color:white;
+        }
+        .litem3 p{
+            font-size:20px;
+            margin-bottom:0px;
+            margin-top: 0px;
+            color:white;
+            margin-left:2px;
+        }
+        .litem3{
+            padding:10px;
+            border:2px solid white;
+            border-radius: 5px;
+        }
+        .mitem{
+            display:flex;
+            flex-direction: column;
+            background-color: rgb(2, 2, 9);
+            height:250px;
+            justify-content: center;
+            position:relative;
+            bottom:200px;
+        }
+        .mitem1,.mitem2{
+            display:flex;
+        }
+        .mitem1 a{
+            margin-left:200px;
+            text-decoration: none;
+            color:white;
+        }
+        .mitem2 a{
+            margin-left:200px;
+            margin-top:30px;
+            text-decoration:none;
+            color:white;
+        }
+        .mitem1 a:hover,.mitem2 a:hover{
+            text-decoration: underline;
+        }
+        .nitem{
+            display: flex;
+            flex-direction: column;
+            justify-content:center;
+            align-items:center;
+            background-color: rgb(2, 2, 9);
+            height:100px;
+            position: relative;
+            bottom:200px;
+        }
+        .nitem1{
+            display: flex;
+        }
+        .nitem1 a{
+            margin-left:10px;
+            text-decoration: none;
+            color:white;
+        }
+        .nitem2 p{
+            color:white;
+        }
+        .nitem1 a:hover{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="aitem">
+        <div class="aitem1"><img src="https://i.pinimg.com/originals/47/b7/bd/47b7bdac4285ee24654ca7d68cf06351.png" alt=""></div>
+        <div class="aitem2"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="aitem3">
+            <h1>Delivering to Muzaffarpur 842002</h1><br><h2>Update Location</h2>
+        </div>
+        <div class="aitem4">
+            <select name="items">
+                <option>All</option>
+                <option>All categories</option>
+                <option>Amazon Devices</option>
+                <option>Amazon Fashion</option>
+                <option>Amazon Pharmacy</option>
+                <option>Appliances</option>
+                <option>Apps and Games</option></select>
+                <input type="text"placeholder="Search Amazon.in">
+        </div>
+        <div class="aitem5"><i class="fa-solid fa-magnifying-glass"></i></div>
+        <div class="aitem6"><img src="https://i.pinimg.com/736x/a9/f9/98/a9f998cfb6a66671a62f0b378456edfd.jpg" alt="Indian Flag" width="30px" height="20px">
+            <select name="Language"><option>EN</option></select>
+        </div>
+        <div class="aitem7">
+            <p>Hello sign in</p>
+            <select name="Sign in"><option><h4>Account & Lists</h4></option></select>
+        </div>
+        <div class="aitem8">
+            <h6>Return</h6>
+            <h4>& Orders</h4>
+        </div>
+        <div class="aitem9"><i class="fa-duotone fa-solid fa-cart-plus" style="--fa-primary-color: #cccdcf; --fa-secondary-color: #d4d8dd;"></i></div>
+    </div>
+    <div class="bitem">
+        <i class="fa-solid fa-bars">All</i>
+        <a href="#">Amazon miniTV</a>
+        <a href="#">Sell</a>
+        <a href="#">Best Sellers</a>
+        <a href="#">Mobiles</a>
+        <a href="#">Today's Deals</a>
+        <a href="#">Customer Service</a>
+        <a href="#"><select><option>Prime</option></select></a>
+        <a href="#">Electronics</a>
+        <a href="#">Fashion</a>
+        <a href="#">New Realeases</a>
+        <a href="#">Home & Kitchen</a>
+        <a href="#">Amazon Pay</a>
+        <a href="#">Computers</a>
+        <a href="#">Car & Motorbike</a>
+    </div>
+    <div class="overlapimg">
+        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/ALP/EBD_Sep/EBD_PC_Xbiz_2x._CB564747765_.jpg" alt="">
+    </div>
+    <div class="citem">
+        <div class="citem1">
+            <h3>Revamp your home in style</h3>
+            <div class="citem1a">
+                <a href="https://www.amazon.in/b/?_encoding=UTF8&node=1380442031&pd_rd_w=auSxO&content-id=amzn1.sym.f8e82c51-0408-4554-a158-9be4d776850d&pf_rd_p=f8e82c51-0408-4554-a158-9be4d776850d&pf_rd_r=YQEPD1VT131S7X9BVM5V&pd_rd_wg=YXNMi&pd_rd_r=836957ce-579c-4c12-b728-b075f6936562&ref_=pd_hp_d_atf_unk&discounts-widget=%2522%257B%255C%2522state%255C%2522%253A%257B%255C%2522refinementFilters%255C%2522%253A%257B%257D%257D%252C%255C%2522version%255C%2522%253A1%257D%2522"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2024/Gateway/BTFGW/PCQC/New/1x/final/186x116_Home_furnishings_2._SY116_CB555624324_.jpg" alt="img" ></a>
+                <a href="https://www.amazon.in/b/?_encoding=UTF8&node=1380374031&pd_rd_w=auSxO&content-id=amzn1.sym.f8e82c51-0408-4554-a158-9be4d776850d&pf_rd_p=f8e82c51-0408-4554-a158-9be4d776850d&pf_rd_r=YQEPD1VT131S7X9BVM5V&pd_rd_wg=YXNMi&pd_rd_r=836957ce-579c-4c12-b728-b075f6936562&ref_=pd_hp_d_atf_unk&discounts-widget=%2522%257B%255C%2522state%255C%2522%253A%257B%255C%2522refinementFilters%255C%2522%253A%257B%257D%257D%252C%255C%2522version%255C%2522%253A1%257D%2522"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2024/Gateway/BTFGW/PCQC/New/1x/final/186x116_Home_decor_1._SY116_CB555624324_.jpg" alt="img"></a>
+            </div>
+            <div class="citem1b">
+                <p>Cusion cover, <br>besheets & more</p>
+                <p style="margin-left:50px;">Figurines,vases & more</p>
+            </div>
+            <div class="citem1c">
+                <a href="https://www.amazon.in/b/?_encoding=UTF8&node=1380510031&pd_rd_w=auSxO&content-id=amzn1.sym.f8e82c51-0408-4554-a158-9be4d776850d&pf_rd_p=f8e82c51-0408-4554-a158-9be4d776850d&pf_rd_r=YQEPD1VT131S7X9BVM5V&pd_rd_wg=YXNMi&pd_rd_r=836957ce-579c-4c12-b728-b075f6936562&ref_=pd_hp_d_atf_unk"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2024/Gateway/BTFGW/PCQC/New/1x/final/186x116_Home_storage_1._SY116_CB555624324_.jpg" alt="img"></a>
+                <a href="https://www.amazon.in/b/?_encoding=UTF8&node=1380485031&pd_rd_w=auSxO&content-id=amzn1.sym.f8e82c51-0408-4554-a158-9be4d776850d&pf_rd_p=f8e82c51-0408-4554-a158-9be4d776850d&pf_rd_r=YQEPD1VT131S7X9BVM5V&pd_rd_wg=YXNMi&pd_rd_r=836957ce-579c-4c12-b728-b075f6936562&ref_=pd_hp_d_atf_unk"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2024/Gateway/BTFGW/PCQC/New/1x/final/186x116_Home_lighting_2._SY116_CB555624324_.jpg" alt="img"></a>
+            </div>
+            <div class="citem1d" style="margin-bottom:40px;">
+                <p>Home Storage</p>
+                <p style="margin-left:65px;">Lighting solutions</p>
+            </div>
+            <p>Explore all</p>
+        </div>
+        <div class="citem2">
+            <h3>Starting $249 | Headphones</h3>
+            <div class="citem2a">
+                <a href="https://www.amazon.in/s?bbn=1388921031&rh=n%3A1388921031%2Cp_89%3AboAt&_encoding=UTF8&content-id=amzn1.sym.5c11cca6-f19e-499f-8d62-bb65be93412c&pd_rd_r=836957ce-579c-4c12-b728-b075f6936562&pd_rd_w=NIE0v&pd_rd_wg=YXNMi&pf_rd_p=5c11cca6-f19e-499f-8d62-bb65be93412c&pf_rd_r=YQEPD1VT131S7X9BVM5V&ref=pd_hp_d_atf_unk"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/june/CE/GW/QC/PC/PC_QuadCard_boAt_0.5x._SY116_CB553870684_.jpg" alt="img" ></a>
+                <a href="https://www.amazon.in/s?i=electronics&bbn=1388921031&rh=n%3A1388921031%2Cp_89%3ABoult&_encoding=UTF8&content-id=amzn1.sym.5c11cca6-f19e-499f-8d62-bb65be93412c&pd_rd_r=836957ce-579c-4c12-b728-b075f6936562&pd_rd_w=NIE0v&pd_rd_wg=YXNMi&pf_rd_p=5c11cca6-f19e-499f-8d62-bb65be93412c&pf_rd_r=YQEPD1VT131S7X9BVM5V&ref=pd_hp_d_atf_unk"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/june/CE/GW/QC/PC/PC_QuadCard_Boult_0.5x._SY116_CB553870684_.jpg" alt="img"></a>
+            </div>
+            <div class="citem2b">
+                <p>Staring $249 | boat</p>
+                <p style="margin-left:40px;">Staring $349 | boult</p>
+            </div>
+            <div class="citem2c">
+                <a href="https://www.amazon.in/s?k=noise&i=electronics&rh=n%3A1388921031%2Cp_n_condition-type%3A8609960031%2Cp_36%3A-200000&_encoding=UTF8&content-id=amzn1.sym.5c11cca6-f19e-499f-8d62-bb65be93412c&pd_rd_r=836957ce-579c-4c12-b728-b075f6936562&pd_rd_w=NIE0v&pd_rd_wg=YXNMi&pf_rd_p=5c11cca6-f19e-499f-8d62-bb65be93412c&pf_rd_r=YQEPD1VT131S7X9BVM5V&ref=pd_hp_d_atf_unk"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/june/CE/GW/QC/PC/PC_QuadCard_Noise_0.5x._SY116_CB553870684_.jpg" alt="img"></a>
+                <a href="https://www.amazon.in/s?k=zebronics&i=electronics&rh=n%3A976419031%2Cn%3A29561348031%2Cp_89%3AZEBRONICS&_encoding=UTF8&content-id=amzn1.sym.5c11cca6-f19e-499f-8d62-bb65be93412c&pd_rd_r=836957ce-579c-4c12-b728-b075f6936562&pd_rd_w=NIE0v&pd_rd_wg=YXNMi&pf_rd_p=5c11cca6-f19e-499f-8d62-bb65be93412c&pf_rd_r=YQEPD1VT131S7X9BVM5V&ref=pd_hp_d_atf_unk"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/june/CE/MSO/PD3/PC_QuadCard_Zeb_0.5x_1._SY116_CB570220221_.jpg" alt="img"></a>
+            </div>
+            <div class="citem2d" style="margin-bottom:55px;">
+                <p>Staring $649 | noise</p>
+                <p style="margin-left:35px;">Staring $149 | Zebronics</p>
+            </div>
+            <p>See all offers</p>
+        </div>
+        <div class="citem3">
+            <h3>Appliances for your home | Upto 55% off</h3>
+            <div class="citem3a">
+                <a href="https://www.amazon.in/s?bbn=81107432031&rh=n%3A81107432031%2Cp_85%3A10440599031&_encoding=UTF8&content-id=amzn1.sym.58c90a12-100b-4a2f-8e15-7c06f1abe2be&pd_rd_r=836957ce-579c-4c12-b728-b075f6936562&pd_rd_w=pkOLJ&pd_rd_wg=YXNMi&pf_rd_p=58c90a12-100b-4a2f-8e15-7c06f1abe2be&pf_rd_r=YQEPD1VT131S7X9BVM5V&ref=pd_hp_d_atf_unk"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg" alt="img" ></a>
+               <a href="https://www.amazon.in/s?bbn=81107433031&rh=n%3A81107433031%2Cp_85%3A10440599031&_encoding=UTF8&content-id=amzn1.sym.58c90a12-100b-4a2f-8e15-7c06f1abe2be&pd_rd_r=836957ce-579c-4c12-b728-b075f6936562&pd_rd_w=pkOLJ&pd_rd_wg=YXNMi&pf_rd_p=58c90a12-100b-4a2f-8e15-7c06f1abe2be&pf_rd_r=YQEPD1VT131S7X9BVM5V&ref=pd_hp_d_atf_unk"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg" alt="img"></a>
+            </div>
+            <div class="citem3b">
+                <p>Air Conditioners</p>
+                <p style="margin-left:50px;">Refrigerators</p>
+            </div>
+            <div class="citem3c">
+                <a href="https://www.amazon.in/s?bbn=84514739031&rh=n%3A84514739031%2Cp_85%3A10440599031&_encoding=UTF8&content-id=amzn1.sym.58c90a12-100b-4a2f-8e15-7c06f1abe2be&pd_rd_r=836957ce-579c-4c12-b728-b075f6936562&pd_rd_w=pkOLJ&pd_rd_wg=YXNMi&pf_rd_p=58c90a12-100b-4a2f-8e15-7c06f1abe2be&pf_rd_r=YQEPD1VT131S7X9BVM5V&ref=pd_hp_d_atf_unk"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg" alt="img"></a>
+                <a href="https://www.amazon.in/s?bbn=84514752031&rh=n%3A84514752031%2Cp_85%3A10440599031&_encoding=UTF8&content-id=amzn1.sym.58c90a12-100b-4a2f-8e15-7c06f1abe2be&pd_rd_r=836957ce-579c-4c12-b728-b075f6936562&pd_rd_w=pkOLJ&pd_rd_wg=YXNMi&pf_rd_p=58c90a12-100b-4a2f-8e15-7c06f1abe2be&pf_rd_r=YQEPD1VT131S7X9BVM5V&ref=pd_hp_d_atf_unk"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg" alt="img"></a>
+            </div>
+            <div class="citem3d" style="margin-bottom:30px;">
+                <p>Microvaves</p>
+                <p style="margin-left:90px;">Washing Machines</p>
+            </div>
+            <p style="margin-top:5px;">See more</p>
+        </div>
+        <div class="citem4">
+            <h3>Starting $99 | Amazon Brand & more</h3>
+            <div class="citem4a">
+                <a href="https://www.amazon.in/s?bbn=1380510031&rh=n%3A1380510031%2Cp_n_format_browse-bin%3A19560790031&_encoding=UTF8&content-id=amzn1.sym.da46a2f7-7743-4ee4-a5be-d0aa38438292&pd_rd_r=836957ce-579c-4c12-b728-b075f6936562&pd_rd_w=uV9BB&pd_rd_wg=YXNMi&pf_rd_p=da46a2f7-7743-4ee4-a5be-d0aa38438292&pf_rd_r=YQEPD1VT131S7X9BVM5V&ref=pd_hp_d_atf_unk"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/PB/March/Bikram/QC_186_ALL_Customer_July_2._SY116_CB567469124_.jpg" alt="img" ></a>
+                <a href="https://www.amazon.in/s?i=kitchen&bbn=1379989031&rh=n%3A976442031%2Cn%3A5925789031%2Cn%3A1379989031%2Cp_n_format_browse-bin%3A19560801031&page=2&_encoding=UTF8&content-id=amzn1.sym.da46a2f7-7743-4ee4-a5be-d0aa38438292&pd_rd_r=836957ce-579c-4c12-b728-b075f6936562&pd_rd_w=uV9BB&pd_rd_wg=YXNMi&pf_rd_p=da46a2f7-7743-4ee4-a5be-d0aa38438292&pf_rd_r=YQEPD1VT131S7X9BVM5V&ref=pd_hp_d_atf_unk"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/PB/March/Bikram/QC_186_ALL_Customer_July_3._SY116_CB567469124_.jpg" alt="img"></a>
+            </div>
+            <div class="citem4b">
+                <p>Starting $299 | Home <br>storage & organisation</p>
+                <p style="margin-left:20px;">Upto 60% off | Storage<br>& racks</p>
+            </div>
+            <div class="citem4c">
+                <a href="https://www.amazon.in/s?bbn=1350380031&rh=n%3A1350380031%2Cp_n_format_browse-bin%3A30678570031&_encoding=UTF8&content-id=amzn1.sym.da46a2f7-7743-4ee4-a5be-d0aa38438292&pd_rd_r=836957ce-579c-4c12-b728-b075f6936562&pd_rd_w=uV9BB&pd_rd_wg=YXNMi&pf_rd_p=da46a2f7-7743-4ee4-a5be-d0aa38438292&pf_rd_r=YQEPD1VT131S7X9BVM5V&ref=pd_hp_d_atf_unk"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/PB/March/Bikram/PC_QC_186_Updated._SY116_CB567468621_.jpg" alt="img"></a>
+                <a href="https://www.amazon.in/s?i=fashion&bbn=16491484031&rh=n%3A16491484031%2Cp_89%3AAmazon+Brand+-+Eden+%26+Ivy%7CAmazon+Brand+-+House+%26+Shields%7CAmazon+Brand+-+INKAST%7CAmazon+Brand+-+Jam+%26+Honey%7CAmazon+Brand+-+Myx%7CAmazon+Brand+-+Symbol%2Cp_n_pct-off-with-tax%3A27060456031%2Cp_72%3A1318476031&s=date-desc-rank&hidden-keywords=-nightgown-kurta-&_encoding=UTF8&content-id=amzn1.sym.da46a2f7-7743-4ee4-a5be-d0aa38438292&pd_rd_r=836957ce-579c-4c12-b728-b075f6936562&pd_rd_w=uV9BB&pd_rd_wg=YXNMi&pf_rd_p=da46a2f7-7743-4ee4-a5be-d0aa38438292&pf_rd_r=YQEPD1VT131S7X9BVM5V&ref=pd_hp_d_atf_unk"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/PB/March/Bikram/QC_186_ALL_Customer_July_1._SY116_CB567470044_.jpg" alt="img"></a>
+            </div>
+            <div class="citem4d">
+                <p>Starting $99 | Toys & <br>games</p>
+                <p style="margin-left:30px;">Upto 60% off | Jackets,dresses <br>& more</p>
+            </div>
+            <p style="margin-top:0px;">Shop now</p>
+        </div>
+    </div>
+    <div class="ditem">
+        <div class="ditem1">
+            <h3>Starting $199 | Amazon Brands & more</h3>
+            <div class="ditem1a">
+                <a href="https://www.amazon.in/s?bbn=1380460031&rh=n%3A1380460031%2Cp_n_format_browse-bin%3A19560802031&_encoding=UTF8&content-id=amzn1.sym.4d494d65-8009-406a-9a50-5e08a16212d7&pd_rd_r=d979f015-8a62-40b1-bd66-da24659d0ff8&pd_rd_w=f3HC9&pd_rd_wg=1G7RY&pf_rd_p=4d494d65-8009-406a-9a50-5e08a16212d7&pf_rd_r=ESBDDN2BTNV6QYVPNDG5&ref=pd_hp_d_atf_unk"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/PB/March/Bikram/PC_QC_HOME_SIZE_186_2._SY116_CB567468236_.jpg" alt="img" ></a>
+                <a href="https://www.amazon.in/s?bbn=1380479031&rh=n%3A1380479031%2Cp_n_format_browse-bin%3A19560802031&_encoding=UTF8&content-id=amzn1.sym.4d494d65-8009-406a-9a50-5e08a16212d7&pd_rd_r=d979f015-8a62-40b1-bd66-da24659d0ff8&pd_rd_w=f3HC9&pd_rd_wg=1G7RY&pf_rd_p=4d494d65-8009-406a-9a50-5e08a16212d7&pf_rd_r=ESBDDN2BTNV6QYVPNDG5&ref=pd_hp_d_atf_unk"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/PB/March/Bikram/PC_QC_HOME_SIZE_186_3._SY116_CB567468236_.jpg" alt="img"></a>
+            </div>
+            <div class="ditem1b">
+                <p>Starting $199 |<br>Bedsheets</p>
+                <p style="margin-left:60px;">Starting $199 |<br>Curtains</p>
+            </div>
+            <div class="ditem1c">
+                <a href="https://www.amazon.in/s?bbn=1380510031&rh=n%3A1380510031%2Cp_n_format_browse-bin%3A19560790031&_encoding=UTF8&content-id=amzn1.sym.4d494d65-8009-406a-9a50-5e08a16212d7&pd_rd_r=d979f015-8a62-40b1-bd66-da24659d0ff8&pd_rd_w=f3HC9&pd_rd_wg=1G7RY&pf_rd_p=4d494d65-8009-406a-9a50-5e08a16212d7&pf_rd_r=ESBDDN2BTNV6QYVPNDG5&ref=pd_hp_d_atf_unk"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/PB/March/Bikram/PC_QC_HOME_SIZE_186_4._SY116_CB567468236_.jpg" alt="img"></a>
+                <a href="https://www.amazon.in/s?bbn=1380374031&rh=n%3A1380374031%2Cp_n_format_browse-bin%3A19560799031&_encoding=UTF8&content-id=amzn1.sym.4d494d65-8009-406a-9a50-5e08a16212d7&pd_rd_r=d979f015-8a62-40b1-bd66-da24659d0ff8&pd_rd_w=f3HC9&pd_rd_wg=1G7RY&pf_rd_p=4d494d65-8009-406a-9a50-5e08a16212d7&pf_rd_r=ESBDDN2BTNV6QYVPNDG5&ref=pd_hp_d_atf_unk"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/PB/March/Bikram/PC_QC_HOME_SIZE_186_1._SY116_CB567468236_.jpg" alt="img"></a>
+            </div>
+            <div class="ditem1d" style="margin-bottom:0px;">
+                <p>Minimum 40% off |<br>Ironing board & more</p>
+                <p style="margin-left:30px;">Upto 60% off | Home Decor</p>
+            </div>
+            <p style="margin:0px;margin-left: 10px;margin-top:10px;">Explore all</p>
+        </div>
+        <div class="ditem2">
+            <h3>Automotive essentials | Upto 60% off</h3>
+            <div class="ditem2a">
+                <a href="https://www.amazon.in/b/?_encoding=UTF8&ie=UTF8&node=5257472031&pd_rd_w=Hx3Mg&content-id=amzn1.sym.9ff36f11-82d6-4600-a8fb-e52bb32e171c&pf_rd_p=9ff36f11-82d6-4600-a8fb-e52bb32e171c&pf_rd_r=ESBDDN2BTNV6QYVPNDG5&pd_rd_wg=1G7RY&pd_rd_r=d979f015-8a62-40b1-bd66-da24659d0ff8&ref_=pd_hp_d_atf_unk"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img17/Auto/2020/GW/PCQC/Glasscare1X._SY116_CB410830553_.jpg" alt="img" ></a>
+                <a href="https://www.amazon.in/b/?_encoding=UTF8&ie=UTF8&node=5257496031&pd_rd_w=Hx3Mg&content-id=amzn1.sym.9ff36f11-82d6-4600-a8fb-e52bb32e171c&pf_rd_p=9ff36f11-82d6-4600-a8fb-e52bb32e171c&pf_rd_r=ESBDDN2BTNV6QYVPNDG5&pd_rd_wg=1G7RY&pd_rd_r=d979f015-8a62-40b1-bd66-da24659d0ff8&ref_=pd_hp_d_atf_unk"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img17/Auto/2020/GW/PCQC/Rim_tyrecare1x._SY116_CB410830552_.jpg" alt="img"></a>
+            </div>
+            <div class="ditem2b">
+                <p>Cleaning accessories</p>
+                <p style="margin-left:30px;">Tyre & rim care</p>
+            </div>
+            <div class="ditem2c">
+                <a href="https://www.amazon.in/b/?_encoding=UTF8&ie=UTF8&node=5258045031&pd_rd_w=Hx3Mg&content-id=amzn1.sym.9ff36f11-82d6-4600-a8fb-e52bb32e171c&pf_rd_p=9ff36f11-82d6-4600-a8fb-e52bb32e171c&pf_rd_r=ESBDDN2BTNV6QYVPNDG5&pd_rd_wg=1G7RY&pd_rd_r=d979f015-8a62-40b1-bd66-da24659d0ff8&ref_=pd_hp_d_atf_unk"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img17/Auto/2020/GW/PCQC/Vega_helmet_186x116._SY116_CB405090404_.jpg" alt="img"></a>
+                <a href="https://www.amazon.in/s?bbn=21541481031&rh=n%3A21541481031%2Cp_72%3A1318477031&_encoding=UTF8&content-id=amzn1.sym.9ff36f11-82d6-4600-a8fb-e52bb32e171c&pd_rd_r=d979f015-8a62-40b1-bd66-da24659d0ff8&pd_rd_w=Hx3Mg&pd_rd_wg=1G7RY&pf_rd_p=9ff36f11-82d6-4600-a8fb-e52bb32e171c&pf_rd_r=ESBDDN2BTNV6QYVPNDG5&ref=pd_hp_d_atf_unk"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img17/Auto/2020/GW/PCQC/Vaccum1x._SY116_CB410830552_.jpg" alt="img"></a>
+            </div>
+            <div class="ditem2d" style="margin-bottom:55px;">
+                <p>Helmests</p>
+                <p style="margin-left:95px;">Vaccum Cleaner</p>
+            </div>
+            <p style="margin-left:10px;margin-top:25px;">See all offers</p>
+        </div>
+        <div class="ditem3">
+            <h3>Upto 55% off | Style for Women</h3>
+            <div class="ditem3a">
+                <a href="https://www.amazon.in/s?i=apparel&bbn=29945467031&rh=n%3A1571271031%2Cn%3A1953602031%2Cn%3A11400137031%2Cn%3A29945467031%2Cp_n_specials_match%3A21618256031%2Cp_85%3A10440599031%2Cp_n_feature_nineteen_browse-bin%3A11301357031&s=apparel&dc&ds=v1%3A%2BhVZPdaILyY6IoUQroogq80u3hsE0%2FFUKKfM3PNzT2c&_encoding=UTF8&content-id=amzn1.sym.74f25a9d-e850-443b-a26a-da459bed7e95&pd_rd_r=d979f015-8a62-40b1-bd66-da24659d0ff8&pd_rd_w=ZvETt&pd_rd_wg=1G7RY&pf_rd_p=74f25a9d-e850-443b-a26a-da459bed7e95&pf_rd_r=ESBDDN2BTNV6QYVPNDG5&qid=1668003576&rnid=11301356031&ref=pd_hp_d_atf_unk"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PC_WF/WF1-186-116._SY116_CB636048992_.jpg" alt="img" ></a>
+               <a href="https://www.amazon.in/b/ref=women&handbag/?_encoding=UTF8&node=29802312031&pd_rd_w=ZvETt&content-id=amzn1.sym.74f25a9d-e850-443b-a26a-da459bed7e95&pf_rd_p=74f25a9d-e850-443b-a26a-da459bed7e95&pf_rd_r=ESBDDN2BTNV6QYVPNDG5&pd_rd_wg=1G7RY&pd_rd_r=d979f015-8a62-40b1-bd66-da24659d0ff8&ref_=pd_hp_d_atf_unk"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PC_WF/WF2-186-116._SY116_CB636048992_.jpg" alt="img"></a>
+            </div>
+            <div class="ditem3b">
+                <p>Womens colthing</p>
+                <p style="margin-left:50px;">Footwear+Handbags</p>
+            </div>
+            <div class="ditem3c">
+                <a href="https://www.amazon.in/s/ref=mega_sv_s23_1_3_1_1/?_encoding=UTF8&rh=i%3Awatches%2Cn%3A2563505031&ie=UTF8&lo=watches&pd_rd_w=ZvETt&content-id=amzn1.sym.74f25a9d-e850-443b-a26a-da459bed7e95&pf_rd_p=74f25a9d-e850-443b-a26a-da459bed7e95&pf_rd_r=ESBDDN2BTNV6QYVPNDG5&pd_rd_wg=1G7RY&pd_rd_r=d979f015-8a62-40b1-bd66-da24659d0ff8&ref_=pd_hp_d_atf_unk"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PC_WF/WF4-186-116._SY116_CB636048992_.jpg" alt="img"></a>
+                <a href="https://www.amazon.in/ref=fj/b/?_encoding=UTF8&node=5210079031&pd_rd_w=ZvETt&content-id=amzn1.sym.74f25a9d-e850-443b-a26a-da459bed7e95&pf_rd_p=74f25a9d-e850-443b-a26a-da459bed7e95&pf_rd_r=ESBDDN2BTNV6QYVPNDG5&pd_rd_wg=1G7RY&pd_rd_r=d979f015-8a62-40b1-bd66-da24659d0ff8&ref_=pd_hp_d_atf_unk"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PC_WF/WF3-186-116._SY116_CB636048992_.jpg" alt="img"></a>
+            </div>
+            <div class="ditem3d" style="margin-bottom:30px;">
+                <p>Watches</p>
+                <p style="margin-left:100px;">Fashion jewellery</p>
+            </div>
+            <p style="margin-top:55px;">See more</p>
+        </div>
+        <div class="ditem4">
+            <h3>Customer's most loved fashion for you</h3>
+            <div class="ditem4a">
+                <a href="https://www.amazon.in/s?i=fashion&bbn=90505325031&rh=n%3A6648217031%2Cn%3A90418239031%2Cn%3A90505325031%2Cn%3A7459780031%2Cn%3A1953602031%2Cn%3A1968253031%2Cn%3A1968255031%2Cp_85%3A10440599031&hidden-keywords=-sponsored&_encoding=UTF8&content-id=amzn1.sym.012b9f07-0f67-4976-9e1c-68694569b30a&pd_rd_r=23e89279-7821-4b28-a04d-983c39c7704f&pd_rd_w=1kLja&pd_rd_wg=7W7NQ&pf_rd_p=012b9f07-0f67-4976-9e1c-68694569b30a&pf_rd_r=AK79VJY78J6EYKSAA297&ref=pd_hp_d_btf_unk"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img2020/img21/GW/BTF_Refersh/June_17/PCQC/1x/New/05._SY116_CB555616559_.jpg" alt="img" ></a>
+                <a href="https://www.amazon.in/s?i=fashion&bbn=90505325031&rh=n%3A6648217031%2Cn%3A90418239031%2Cn%3A90505325031%2Cn%3A7459780031%2Cn%3A1953602031%2Cn%3A11400137031%2Cn%3A1968542031%2Cp_85%3A10440599031&hidden-keywords=-sponsored-men&_encoding=UTF8&content-id=amzn1.sym.012b9f07-0f67-4976-9e1c-68694569b30a&pd_rd_r=23e89279-7821-4b28-a04d-983c39c7704f&pd_rd_w=1kLja&pd_rd_wg=7W7NQ&pf_rd_p=012b9f07-0f67-4976-9e1c-68694569b30a&pf_rd_r=AK79VJY78J6EYKSAA297&ref=pd_hp_d_btf_unk"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img2020/img21/GW/BTF_Refersh/June_17/PCQC/1x/New/07._SY116_CB555616559_.jpg" alt="img"></a>
+            </div>
+            <div class="ditem4b">
+                <p>kurta & sets</p>
+                <p style="margin-left:80px">Tops</p>
+            </div>
+            <div class="ditem4c">
+                <a href="https://www.amazon.in/s?i=fashion&bbn=90505325031&rh=n%3A6648217031%2Cn%3A90418239031%2Cn%3A90505325031%2Cn%3A7459780031%2Cn%3A1953602031%2Cn%3A11400137031%2Cn%3A15330093031%2Cp_85%3A10440599031&s=apparel&hidden-keywords=-sponsored&_encoding=UTF8&content-id=amzn1.sym.012b9f07-0f67-4976-9e1c-68694569b30a&pd_rd_r=23e89279-7821-4b28-a04d-983c39c7704f&pd_rd_w=1kLja&pd_rd_wg=7W7NQ&pf_rd_p=012b9f07-0f67-4976-9e1c-68694569b30a&pf_rd_r=AK79VJY78J6EYKSAA297&ref=pd_hp_d_btf_unk"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img2020/img21/GW/BTF_Refersh/June_17/PCQC/1x/New/04._SY116_CB555616559_.jpg" alt="img"></a>
+                <a href="https://www.amazon.in/s?i=fashion&bbn=90505325031&rh=n%3A6648217031%2Cn%3A90418239031%2Cn%3A90505325031%2Cn%3A7459780031%2Cn%3A1953602031%2Cn%3A1968253031%2Cn%3A1968256031%2Cp_85%3A10440599031&hidden-keywords=-sponsored&_encoding=UTF8&content-id=amzn1.sym.012b9f07-0f67-4976-9e1c-68694569b30a&pd_rd_r=23e89279-7821-4b28-a04d-983c39c7704f&pd_rd_w=1kLja&pd_rd_wg=7W7NQ&pf_rd_p=012b9f07-0f67-4976-9e1c-68694569b30a&pf_rd_r=AK79VJY78J6EYKSAA297&ref=pd_hp_d_btf_unk"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img2020/img21/GW/BTF_Refersh/June_17/PCQC/1x/New/06._SY116_CB555616559_.jpg" alt="img"></a>
+            </div>
+            <div class="ditem4d">
+                <p>Dresses</p>
+                <p style="margin-left:100px;">Sarees</p>
+            </div>
+            <p style="margin-top:35px;">Shop now</p>
+        </div>
+    </div>
+    <div class="eitem">
+        <div class="eitem1">
+            <h3>No cost EMI up to 24 months | Starting $4433 INR/Month </h3>
+            <a href="#">See all offers</a>
+        </div>
+        <div class="eitem2">
+            <a href="https://www.amazon.in/Hero-Splendor-Accent-Booking-Ex-Showroom/dp/B0D9DMGGVP/?_encoding=UTF8&pd_rd_w=i5wqC&content-id=amzn1.sym.1183450e-692e-4628-9776-d0eec3117b1c&pf_rd_p=1183450e-692e-4628-9776-d0eec3117b1c&pf_rd_r=GMVX9RFWBF3S8NMHVTMW&pd_rd_wg=rt3oJ&pd_rd_r=9d171f34-ea55-425b-a5ec-1d34a0168e8f&ref_=pd_hp_d_btf_ls_gwc_pc_en4_"><img src="https://m.media-amazon.com/images/I/31GEH239AIL._AC_SY200_.jpg" alt="img"></a>
+            <a href="https://www.amazon.in/Hero-Xtreme-Stealth-Booking-Ex-Showroom/dp/B0D9DMDVLV/?_encoding=UTF8&pd_rd_w=i5wqC&content-id=amzn1.sym.1183450e-692e-4628-9776-d0eec3117b1c&pf_rd_p=1183450e-692e-4628-9776-d0eec3117b1c&pf_rd_r=GMVX9RFWBF3S8NMHVTMW&pd_rd_wg=rt3oJ&pd_rd_r=9d171f34-ea55-425b-a5ec-1d34a0168e8f&ref_=pd_hp_d_btf_ls_gwc_pc_en4_"><img src="https://m.media-amazon.com/images/I/31fMSsn2cpL._AC_SY200_.jpg" alt="img"></a>
+            <a href="https://www.amazon.in/Bajaj-Dominar-Motorcycle-Savanna-Green/dp/B0D83T669B/?_encoding=UTF8&pd_rd_w=i5wqC&content-id=amzn1.sym.1183450e-692e-4628-9776-d0eec3117b1c&pf_rd_p=1183450e-692e-4628-9776-d0eec3117b1c&pf_rd_r=GMVX9RFWBF3S8NMHVTMW&pd_rd_wg=rt3oJ&pd_rd_r=9d171f34-ea55-425b-a5ec-1d34a0168e8f&ref_=pd_hp_d_btf_ls_gwc_pc_en4_"><img src="https://m.media-amazon.com/images/I/61r7rylEOWL._AC_SY200_.jpg" alt="img"></a>
+            <a href="https://www.amazon.in/Bajaj-Pulsar-Motorbike-Motorcycle-Brooklyn/dp/B0D8JGSXZW/?_encoding=UTF8&pd_rd_w=i5wqC&content-id=amzn1.sym.1183450e-692e-4628-9776-d0eec3117b1c&pf_rd_p=1183450e-692e-4628-9776-d0eec3117b1c&pf_rd_r=GMVX9RFWBF3S8NMHVTMW&pd_rd_wg=rt3oJ&pd_rd_r=9d171f34-ea55-425b-a5ec-1d34a0168e8f&ref_=pd_hp_d_btf_ls_gwc_pc_en4_"><img src="https://m.media-amazon.com/images/I/617VVyhYS9L._AC_SY200_.jpg" alt="img"></a>
+            <a href="https://www.amazon.in/Hero-Passion-Sport-Booking-Ex-Showroom/dp/B0D9DLZMCF/?_encoding=UTF8&pd_rd_w=i5wqC&content-id=amzn1.sym.1183450e-692e-4628-9776-d0eec3117b1c&pf_rd_p=1183450e-692e-4628-9776-d0eec3117b1c&pf_rd_r=GMVX9RFWBF3S8NMHVTMW&pd_rd_wg=rt3oJ&pd_rd_r=9d171f34-ea55-425b-a5ec-1d34a0168e8f&ref_=pd_hp_d_btf_ls_gwc_pc_en4_"><img src="https://m.media-amazon.com/images/I/512JQ+6XadL._AC_SY200_.jpg" alt="img"></a>
+        </div>
+    </div>
+    <div class="fitem">
+        <div class="fitem1">
+            <h3>Best deals curated from stores nearby</h3>
+            <a href="#">See all offers</a>
+        </div>
+        <div class="fitem2">
+            <a href="https://www.amazon.in/CARPET-EMPORIO-Polyester-Decorative-Shaggy/dp/B0C8B8V699/?_encoding=UTF8&pd_rd_w=aJuLD&content-id=amzn1.sym.a271d5c3-4f1d-481d-8e55-5f9f95058e08&pf_rd_p=a271d5c3-4f1d-481d-8e55-5f9f95058e08&pf_rd_r=EE91A5YZWA6S5J8CN08F&pd_rd_wg=Giydl&pd_rd_r=9d2fc609-1e0f-4258-a93f-b0b635e108b6&ref_=pd_hp_d_btf_ls_gwc_pc_en2_"><img src="https://m.media-amazon.com/images/I/71useTsJFnL._AC_SY200_.jpg" alt="img"></a>
+            <a href="https://www.amazon.in/Love-Vibrant-Lights-Office-Events/dp/B0CT5BX84X/?_encoding=UTF8&pd_rd_w=aJuLD&content-id=amzn1.sym.a271d5c3-4f1d-481d-8e55-5f9f95058e08&pf_rd_p=a271d5c3-4f1d-481d-8e55-5f9f95058e08&pf_rd_r=EE91A5YZWA6S5J8CN08F&pd_rd_wg=Giydl&pd_rd_r=9d2fc609-1e0f-4258-a93f-b0b635e108b6&ref_=pd_hp_d_btf_ls_gwc_pc_en2_"><img src="https://m.media-amazon.com/images/I/51r6QjsR26L._AC_SY200_.jpg" alt="img"></a>
+            <a href="https://www.amazon.in/Slay-Vibrant-Lights-Office-Events/dp/B0CT5QCWLN/?_encoding=UTF8&pd_rd_w=aJuLD&content-id=amzn1.sym.a271d5c3-4f1d-481d-8e55-5f9f95058e08&pf_rd_p=a271d5c3-4f1d-481d-8e55-5f9f95058e08&pf_rd_r=EE91A5YZWA6S5J8CN08F&pd_rd_wg=Giydl&pd_rd_r=9d2fc609-1e0f-4258-a93f-b0b635e108b6&ref_=pd_hp_d_btf_ls_gwc_pc_en2_"><img src="https://m.media-amazon.com/images/I/41OgB9jk9yL._AC_SY200_.jpg" alt="img"></a>
+            <a href="https://www.amazon.in/CARPET-TRUCSON-Carpet-Bedroom-Living/dp/B0BZYNLBG8/?_encoding=UTF8&pd_rd_w=aJuLD&content-id=amzn1.sym.a271d5c3-4f1d-481d-8e55-5f9f95058e08&pf_rd_p=a271d5c3-4f1d-481d-8e55-5f9f95058e08&pf_rd_r=EE91A5YZWA6S5J8CN08F&pd_rd_wg=Giydl&pd_rd_r=9d2fc609-1e0f-4258-a93f-b0b635e108b6&ref_=pd_hp_d_btf_ls_gwc_pc_en2_"><img src="https://m.media-amazon.com/images/I/61DKjmukxxL._AC_SY200_.jpg" alt="img"></a>
+            <a href="https://www.amazon.in/One94Store-Rechargeable-Decorative-Nightstand-Restaurant/dp/B0CJXQWMNB/?_encoding=UTF8&pd_rd_w=aJuLD&content-id=amzn1.sym.a271d5c3-4f1d-481d-8e55-5f9f95058e08&pf_rd_p=a271d5c3-4f1d-481d-8e55-5f9f95058e08&pf_rd_r=EE91A5YZWA6S5J8CN08F&pd_rd_wg=Giydl&pd_rd_r=9d2fc609-1e0f-4258-a93f-b0b635e108b6&ref_=pd_hp_d_btf_ls_gwc_pc_en2_"><img src="https://m.media-amazon.com/images/I/51t5xU72ZZL._AC_SY200_.jpg" alt="img"></a>
+            <a href="https://www.amazon.in/One94store-Cotton-Ball-String-Lights/dp/B09QGL352S/?_encoding=UTF8&pd_rd_w=aJuLD&content-id=amzn1.sym.a271d5c3-4f1d-481d-8e55-5f9f95058e08&pf_rd_p=a271d5c3-4f1d-481d-8e55-5f9f95058e08&pf_rd_r=EE91A5YZWA6S5J8CN08F&pd_rd_wg=Giydl&pd_rd_r=9d2fc609-1e0f-4258-a93f-b0b635e108b6&ref_=pd_hp_d_btf_ls_gwc_pc_en2_"><img src="https://m.media-amazon.com/images/I/71sTxczz4IL._AC_SY200_.jpg" alt="img"></a>
+        </div>
+    </div>
+    <div class="gitem">
+        <div class="gitem1">
+            <h3>Min. 50% off | Unique kitchen finds | Amazon Brands & more</h3>
+            <a href="#">See all offers</a>
+        </div>
+        <div class="gitem2">
+            <a href="https://www.amazon.in/Amazon-Brand-Solimo-Stainless-Bottle/dp/B0929P7NT1/?_encoding=UTF8&pd_rd_w=4VY9r&content-id=amzn1.sym.5fb50278-ac8e-4ca6-8fd4-02427124e9ff&pf_rd_p=5fb50278-ac8e-4ca6-8fd4-02427124e9ff&pf_rd_r=EE91A5YZWA6S5J8CN08F&pd_rd_wg=Giydl&pd_rd_r=9d2fc609-1e0f-4258-a93f-b0b635e108b6&ref_=pd_hp_d_btf_PB"><img src="https://m.media-amazon.com/images/I/81mrMggUQnS._AC_SY200_.jpg" alt="img"></a>
+            <a href="https://www.amazon.in/Solimo-Plastic-Cutter-Silver-SOKT165/dp/B07PBBXV86/?_encoding=UTF8&pd_rd_w=4VY9r&content-id=amzn1.sym.5fb50278-ac8e-4ca6-8fd4-02427124e9ff&pf_rd_p=5fb50278-ac8e-4ca6-8fd4-02427124e9ff&pf_rd_r=EE91A5YZWA6S5J8CN08F&pd_rd_wg=Giydl&pd_rd_r=9d2fc609-1e0f-4258-a93f-b0b635e108b6&ref_=pd_hp_d_btf_PB"><img src="https://m.media-amazon.com/images/I/81tOJ3uVe3L._AC_SY200_.jpg" alt="img"></a>
+            <a href="https://www.amazon.in/Amazon-Brand-Plastic-Storage-Containers/dp/B07HCLTFRN/?_encoding=UTF8&pd_rd_w=4VY9r&content-id=amzn1.sym.5fb50278-ac8e-4ca6-8fd4-02427124e9ff&pf_rd_p=5fb50278-ac8e-4ca6-8fd4-02427124e9ff&pf_rd_r=EE91A5YZWA6S5J8CN08F&pd_rd_wg=Giydl&pd_rd_r=9d2fc609-1e0f-4258-a93f-b0b635e108b6&ref_=pd_hp_d_btf_PB"><img src="https://m.media-amazon.com/images/I/91Hffht29zL._AC_SY200_.jpg" alt="img"></a>
+            <a href="https://www.amazon.in/Amazon-Brand-Solimo-Stainless-Coffee/dp/B0C1P299BQ/?_encoding=UTF8&pd_rd_w=4VY9r&content-id=amzn1.sym.5fb50278-ac8e-4ca6-8fd4-02427124e9ff&pf_rd_p=5fb50278-ac8e-4ca6-8fd4-02427124e9ff&pf_rd_r=EE91A5YZWA6S5J8CN08F&pd_rd_wg=Giydl&pd_rd_r=9d2fc609-1e0f-4258-a93f-b0b635e108b6&ref_=pd_hp_d_btf_PB"><img src="https://m.media-amazon.com/images/I/71O-AV89z5L._AC_SY200_.jpg" alt="img"></a>
+            <a href="https://www.amazon.in/Amazon-Brand-Solimo-Plastic-Dough/dp/B07P82MMQF/?_encoding=UTF8&pd_rd_w=4VY9r&content-id=amzn1.sym.5fb50278-ac8e-4ca6-8fd4-02427124e9ff&pf_rd_p=5fb50278-ac8e-4ca6-8fd4-02427124e9ff&pf_rd_r=EE91A5YZWA6S5J8CN08F&pd_rd_wg=Giydl&pd_rd_r=9d2fc609-1e0f-4258-a93f-b0b635e108b6&ref_=pd_hp_d_btf_PB"><img src="https://m.media-amazon.com/images/I/711bfQFRYKL._AC_SY200_.jpg" alt="img"></a>
+            <a href="https://www.amazon.in/Amazon-Brand-Solimo-Vegetable-Chopper/dp/B07FFMYKW2/?_encoding=UTF8&pd_rd_w=4VY9r&content-id=amzn1.sym.5fb50278-ac8e-4ca6-8fd4-02427124e9ff&pf_rd_p=5fb50278-ac8e-4ca6-8fd4-02427124e9ff&pf_rd_r=EE91A5YZWA6S5J8CN08F&pd_rd_wg=Giydl&pd_rd_r=9d2fc609-1e0f-4258-a93f-b0b635e108b6&ref_=pd_hp_d_btf_PB"><img src="https://m.media-amazon.com/images/I/51tjMeONVoL._AC_SY200_.jpg" alt="img"></a>
+        </div>
+    </div>
+    <div class="hitem">
+        <div class="hitem1">
+            <h3>Best Sellers in Clothing & Accessories</h3>
+            <div class="hitem1a">
+                <a href="https://www.amazon.in/GoSriKi-Bandhani-Printed-Straight-TURAE-RED-GS_XL_Red_X-Large/dp/B0D1CQPWZ8/?_encoding=UTF8&pd_rd_w=o9K6t&content-id=amzn1.sym.211684f4-ebe1-443f-8a4a-0773471e979f&pf_rd_p=211684f4-ebe1-443f-8a4a-0773471e979f&pf_rd_r=3DZABV7Z1PYP1PMJ5EQ4&pd_rd_wg=c6BNV&pd_rd_r=b616c371-cca1-4986-a04f-5d19e2796e86&ref_=pd_hp_d_btf_crs_zg_bs_1571271031"><img src="https://m.media-amazon.com/images/I/610InQb9rTL._AC_SY170_.jpg" alt="img"></a>
+                <a href="https://www.amazon.in/SJEWARE-Pairs-Solid-Ankle-Multicolor/dp/B0BZVZYXV5/?_encoding=UTF8&pd_rd_w=o9K6t&content-id=amzn1.sym.211684f4-ebe1-443f-8a4a-0773471e979f&pf_rd_p=211684f4-ebe1-443f-8a4a-0773471e979f&pf_rd_r=3DZABV7Z1PYP1PMJ5EQ4&pd_rd_wg=c6BNV&pd_rd_r=b616c371-cca1-4986-a04f-5d19e2796e86&ref_=pd_hp_d_btf_crs_zg_bs_1571271031"><img src="https://m.media-amazon.com/images/I/81TRdxk1wnL._AC_SY170_.jpg" alt="img"></a>
+            </div>
+            <div class="hitem1b">
+                <a href="https://www.amazon.in/Lymio-Cargo-Cotton-Cargos-Cargo-01-04/dp/B0CTQGS7KD/?_encoding=UTF8&pd_rd_w=o9K6t&content-id=amzn1.sym.211684f4-ebe1-443f-8a4a-0773471e979f&pf_rd_p=211684f4-ebe1-443f-8a4a-0773471e979f&pf_rd_r=3DZABV7Z1PYP1PMJ5EQ4&pd_rd_wg=c6BNV&pd_rd_r=b616c371-cca1-4986-a04f-5d19e2796e86&ref_=pd_hp_d_btf_crs_zg_bs_1571271031"><img src="https://m.media-amazon.com/images/I/51NSC2qvOxL._AC_SY170_.jpg" alt="img"></a>
+                <a href="https://www.amazon.in/T-Shirt-Plain-Shirt-Polo-18-21-Grey/dp/B0CZ498VSM/?_encoding=UTF8&pd_rd_w=o9K6t&content-id=amzn1.sym.211684f4-ebe1-443f-8a4a-0773471e979f&pf_rd_p=211684f4-ebe1-443f-8a4a-0773471e979f&pf_rd_r=3DZABV7Z1PYP1PMJ5EQ4&pd_rd_wg=c6BNV&pd_rd_r=b616c371-cca1-4986-a04f-5d19e2796e86&ref_=pd_hp_d_btf_crs_zg_bs_1571271031"><img src="https://m.media-amazon.com/images/I/71x4rLhMkML._AC_SY170_.jpg" alt="img"></a>
+            </div>
+            <p style="margin-top:10px;">See more</p>
+        </div>
+        <div class="hitem2">
+            <h3>More items to consider</h3>
+            <div class="hitem2a">
+                <a href="https://www.amazon.in/Amazon-Brand-Solimo-Stainless-Coffee/dp/B0C1P299BQ/?_encoding=UTF8&pd_rd_w=jmsTX&content-id=amzn1.sym.aff93425-4e25-4d86-babd-0fa9faf7ca5d%3Aamzn1.symc.36bd837a-d66d-47d1-8457-ffe9a9f3ddab&pf_rd_p=aff93425-4e25-4d86-babd-0fa9faf7ca5d&pf_rd_r=3DZABV7Z1PYP1PMJ5EQ4&pd_rd_wg=c6BNV&pd_rd_r=b616c371-cca1-4986-a04f-5d19e2796e86&ref_=pd_hp_d_btf_ci_mcx_mr_hp_atf_m"><img src="https://m.media-amazon.com/images/I/71O-AV89z5L._AC_SY95_.jpg" alt="img"></a>
+                <a href="https://www.amazon.in/Stainless-Vacuum-Insulated-Carafe-Leak-Proof/dp/B0BLNQQJLW/?_encoding=UTF8&pd_rd_w=jmsTX&content-id=amzn1.sym.aff93425-4e25-4d86-babd-0fa9faf7ca5d%3Aamzn1.symc.36bd837a-d66d-47d1-8457-ffe9a9f3ddab&pf_rd_p=aff93425-4e25-4d86-babd-0fa9faf7ca5d&pf_rd_r=3DZABV7Z1PYP1PMJ5EQ4&pd_rd_wg=c6BNV&pd_rd_r=b616c371-cca1-4986-a04f-5d19e2796e86&ref_=pd_hp_d_btf_ci_mcx_mr_hp_atf_m"><img src="https://m.media-amazon.com/images/I/61wwhXfPojL._AC_SY95_.jpg" alt="img"></a>
+            </div>
+            <div class="hitem2b">
+                <p>Amazon Brand - Soli…</p>
+                <p>Pexpo Cosmo Stainle…</p>
+            </div>
+            <div class="hitem2c">
+                <a href="https://www.amazon.in/AGARO-Esteem-Stainless-Vacuum-Insulation/dp/B09HZHMZDL/?_encoding=UTF8&pd_rd_w=jmsTX&content-id=amzn1.sym.aff93425-4e25-4d86-babd-0fa9faf7ca5d%3Aamzn1.symc.36bd837a-d66d-47d1-8457-ffe9a9f3ddab&pf_rd_p=aff93425-4e25-4d86-babd-0fa9faf7ca5d&pf_rd_r=3DZABV7Z1PYP1PMJ5EQ4&pd_rd_wg=c6BNV&pd_rd_r=b616c371-cca1-4986-a04f-5d19e2796e86&ref_=pd_hp_d_btf_ci_mcx_mr_hp_atf_m"><img src="https://m.media-amazon.com/images/I/61G2CYn2DlL._AC_SY95_.jpg" alt="img"></a>
+                <a href="https://www.amazon.in/Paras-Homeware-Insulated-Leak-Proof-Thermoware/dp/B0D636KFWB/?_encoding=UTF8&pd_rd_w=jmsTX&content-id=amzn1.sym.aff93425-4e25-4d86-babd-0fa9faf7ca5d%3Aamzn1.symc.36bd837a-d66d-47d1-8457-ffe9a9f3ddab&pf_rd_p=aff93425-4e25-4d86-babd-0fa9faf7ca5d&pf_rd_r=3DZABV7Z1PYP1PMJ5EQ4&pd_rd_wg=c6BNV&pd_rd_r=b616c371-cca1-4986-a04f-5d19e2796e86&ref_=pd_hp_d_btf_ci_mcx_mr_hp_atf_m"><img src="https://m.media-amazon.com/images/I/51bBSLXSRcL._AC_SY95_.jpg" alt="img"></a>
+            </div>
+            <div class="hitem2d">
+                <p>AGARO Esteem Stainl…</p>
+                <p>Paras Homeware Cos…</p>
+            </div>
+            <p style="margin-top:55px;">Explore more</p>
+        </div>
+        <div class="hitem3">
+            <h3>Up to 50% off | International brands</h3>
+            <div class="hitem3a">
+                <a href="https://www.amazon.in/b/?_encoding=UTF8&node=21469514031&pd_rd_w=ODghu&content-id=amzn1.sym.8267c5a8-02b1-4720-a5f9-e34bbe1c9951&pf_rd_p=8267c5a8-02b1-4720-a5f9-e34bbe1c9951&pf_rd_r=3DZABV7Z1PYP1PMJ5EQ4&pd_rd_wg=c6BNV&pd_rd_r=b616c371-cca1-4986-a04f-5d19e2796e86&ref_=pd_hp_d_btf_unk&discounts-widget=%2522%257B%255C%2522state%255C%2522%253A%257B%255C%2522refinementFilters%255C%2522%253A%257B%257D%257D%252C%255C%2522version%255C%2522%253A1%257D%2522"><img src="https://images-eu.ssl-images-amazon.com/images/G/31/img19/OOC/Gateway/540/379X304._SY304_CB563554390_.jpg" alt="img"></a>
+            </div>
+            <p style="margin-top:40px;">See all offers</p>
+        </div>
+        <div class="hitem4">
+            <h3>Customers’ Most-Loved Fashion for you</h3>
+            <div class="hitem4a">
+                <a href="https://www.amazon.in/HTC-Instrument-LX-Luxmeter-Up/dp/B013YPMMGM/?_encoding=UTF8&pd_rd_w=NkIm0&content-id=amzn1.sym.6a567e3d-fd9a-4932-aa05-d0107e1bcce7&pf_rd_p=6a567e3d-fd9a-4932-aa05-d0107e1bcce7&pf_rd_r=3DZABV7Z1PYP1PMJ5EQ4&pd_rd_wg=c6BNV&pd_rd_r=b616c371-cca1-4986-a04f-5d19e2796e86&ref_=pd_hp_d_btf_a2i_gw_cml"><img src="https://m.media-amazon.com/images/I/616RCgaeZ4L._AC_SY145_.jpg" alt="img"></a>
+                <a href="https://www.amazon.in/Fabricorn-Maroon-Airforce-Cotton-XX-Large/dp/B0B54WMSC1/?_encoding=UTF8&pd_rd_w=NkIm0&content-id=amzn1.sym.6a567e3d-fd9a-4932-aa05-d0107e1bcce7&pf_rd_p=6a567e3d-fd9a-4932-aa05-d0107e1bcce7&pf_rd_r=3DZABV7Z1PYP1PMJ5EQ4&pd_rd_wg=c6BNV&pd_rd_r=b616c371-cca1-4986-a04f-5d19e2796e86&ref_=pd_hp_d_btf_a2i_gw_cml"><img src="https://m.media-amazon.com/images/I/61dtCfEcB+L._AC_SY145_.jpg" alt="img"></a>
+            </div>
+            <div class="hitem4b">
+                <a href="https://www.amazon.in/Nivia-Synthetic-Leather-Sports-Shoes/dp/B074NWYSZ3/?_encoding=UTF8&pd_rd_w=NkIm0&content-id=amzn1.sym.6a567e3d-fd9a-4932-aa05-d0107e1bcce7&pf_rd_p=6a567e3d-fd9a-4932-aa05-d0107e1bcce7&pf_rd_r=3DZABV7Z1PYP1PMJ5EQ4&pd_rd_wg=c6BNV&pd_rd_r=b616c371-cca1-4986-a04f-5d19e2796e86&ref_=pd_hp_d_btf_a2i_gw_cml"><img src="https://m.media-amazon.com/images/I/51CJtaObO1L._AC_SY145_.jpg" alt="img"></a>
+                <a href="https://www.amazon.in/Skechers-104411-Skechers-Womens-Virtue-Brown-Sneakers-UK-3/dp/B09PZ6M3QQ/?_encoding=UTF8&pd_rd_w=NkIm0&content-id=amzn1.sym.6a567e3d-fd9a-4932-aa05-d0107e1bcce7&pf_rd_p=6a567e3d-fd9a-4932-aa05-d0107e1bcce7&pf_rd_r=3DZABV7Z1PYP1PMJ5EQ4&pd_rd_wg=c6BNV&pd_rd_r=b616c371-cca1-4986-a04f-5d19e2796e86&ref_=pd_hp_d_btf_a2i_gw_cml"><img src="https://m.media-amazon.com/images/I/81x0B3OTHtL._AC_SY145_.jpg" alt="img"></a>
+            </div>
+            <p>Explore more</p>
+        </div>
+    </div>
+    <div class="iitem">
+        <p>See Personalized Recommendations</p>
+        <button>Sign in</button>
+        <p>New Customer? <a href="#">Start here</a></p>
+    </div>
+    <div class="jitem">
+        <a href="amazon.html">Back to top</a>
+    </div>
+    <div class="kitem">
+        <div class="kitem1">
+            <a href="#"style="font-size:20px;margin-bottom:10px;"><b>Get to Know<br>Us</b></a>
+            <a href="#">About Us</a>
+            <a href="#">Careers</a>
+            <a href="#">Press Releases</a>
+            <a href="#">Amazon Science</a>
+        </div>
+        <div class="kitem2">
+            <a href="#"style="font-size:20px;margin-bottom:10px;"><b>Connect with<br>Us</b></a>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+        <div class="kitem3">
+            <a href="#"style="font-size:20px;margin-bottom:10px;"><b>Make Money with Us</b></a>
+            <a href="#">Sell on Amazon</a>
+            <a href="#">Sell under Amazon<br>Accelerator</a>
+            <a href="#">Protect and Build Your Brand</a>
+            <a href="#">Amazon Global Selling</a>
+            <a href="#">Supply to Amazon</a>
+            <a href="#">Become an Affiliate</a>
+            <a href="#">Fulfilment by Amazon</a>
+            <a href="#">Advertise Your Products</a>
+            <a href="#">Amazon Pay on Merchants</a>
+        </div>
+        <div class="kitem4">
+            <a href="#"style="font-size:20px;margin-bottom:10px;"><b>Let Us Help You</b></a>
+            <a href="#">Your Account</a>
+            <a href="#">Returns Centre</a>
+            <a href="#">Recalls and Product Safety<br>Alerts</a>
+            <a href="#">100% Purchase Protection</a>
+            <a href="#">Amazon App Download</a>
+            <a href="#">Help</a>
+        </div>
+    </div>
+    <div class="litem">
+        <div class="litem1">
+        <img src="https://i.pinimg.com/originals/47/b7/bd/47b7bdac4285ee24654ca7d68cf06351.png" alt="logo" height="45px" width="65px"></div>
+        <div class="litem2">
+            <i class="fa-solid fa-globe"></i>
+            <select name="language">
+            <option>English</option>
+        </select></div>
+        <div class="litem3">
+        <img src="https://i.pinimg.com/736x/a9/f9/98/a9f998cfb6a66671a62f0b378456edfd.jpg" alt="Indian Flag" width="35px" height="25px">
+        <p>India</p></div>
+    </div>
+    <div class="mitem">
+        <div class="mitem1">
+            <a href="#">AbeBooks<br>Books,art&<br>collectible</a>
+            <a href="#">Amazon Web Services<br>Scalable Cloud<br>Computing Services</a>
+            <a href="#">Audible<br>Download<br>Audio Books</a>
+            <a href="#">IMDb<br>Movies, TV<br>& Celebrities</a>
+        </div>
+        <div class="mitem2">
+            <a href="#">Shopbop<br>Designer<br>Fashion Brands</a>
+            <a href="#" style="margin-left:170px;">Amazon Business<br>Everything For<br>Your Business</a>
+            <a href="#" style="margin-left:230px;">Prime Now<br>2-Hour Delivery<br>on Everyday Items</a>
+            <a href="#" style="margin-left:160px">Amazon Prime Music<br>100 million songs, ad-free<br>Over 15 million podcast episodes</a>
+        </div>
+    </div>
+    <div class="nitem">
+        <div class="nitem1">
+            <a href="#">Conditions of Use & Sale</a>
+            <a href="#">Privacy Notice</a>
+            <a href="#">Interest-Based Ads</a>
+        </div>
+        <div class="nitem2">
+            <p>© 1996-2024, Amazon.com, Inc. or its affiliates</p>
+        </div>
+    </div>
+</body>
+</html>
